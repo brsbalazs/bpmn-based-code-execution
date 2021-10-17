@@ -1,0 +1,17 @@
+{
+  "name": "bpmn-starter-project",
+  "version": "1.0.0",
+  "description": "Demo project for bpmn package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bpmn"
+  ],
+  "author": "Béres Balázs",
+  "license": "ISC",
+  "dependencies": {
+    "bpmn": "file:../bpmn"
+  }
+}
