@@ -4,7 +4,6 @@ var bpmn = require("bpmn");
 
 
 // Unfortunately does not work with relative path ../bpmn/examples/processes/task.bpmn
-// /Users/brsbalazs/Dev/bme/szakdolg/bpmn-based-code-execution/bpmn/examples/processes/exclusiveGateway.bpmn
 bpmn.createUnmanagedProcess("/Users/brsbalazs/Dev/bme/szakdolg/bpmn-based-code-execution/bpmn-starter-project/processes/custom-process.bpmn", function(err, myProcess){
 
     // we start the process

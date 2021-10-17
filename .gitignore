@@ -10,4 +10,4 @@ bpmn/node_modules
 bpmn/coverage
 bpmn/nodeunit-output
 bpmn-starter-project/node_modules
-bpmn-starter-project/logs
+bpmn-starter-project/logs/*

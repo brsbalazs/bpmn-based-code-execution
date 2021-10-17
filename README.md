@@ -64,5 +64,31 @@ onBeginHandler
 MyEnd
 onEndHandler
 ```
+## 2. From where to call process.taskDone method
+Both two possible to call it from the process initializer callback method like abowe or from the handler method like this.taskDone("Task B",{}) since the context of the handler is the process itself.
+
+## 3. How to work with gateways
+The Is_it_ok handler fetches the data from the backend to evaluate the condition, and it passes the value in the data parameter to the ok and nok handler to evaluate.
+
+```
+exports.Is_it_ok_ = function(data, done) {
+    console.log("Is_it_ok_");
+    done("B");
+};
+
+// From the bellow two Is_it_ok handler only one should return true - only one edge can be executed
+// Which handler returns true will be chosen to execute
+exports.Is_it_ok_$ok = function(data) {
+
+    console.log("Is_it_ok_$ok");
+    return data == "B"
+};
+
+exports.Is_it_ok_$nok = function(data) {
+    console.log("Is_it_ok_$nok");
+    return data == "A"
+};
+```
+
 
 
