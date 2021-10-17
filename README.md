@@ -69,6 +69,8 @@ Both two possible to call it from the process initializer callback method like a
 
 ## 3. How to work with gateways
 The Is_it_ok handler fetches the data from the backend to evaluate the condition, and it passes the value in the data parameter to the ok and nok handler to evaluate.
+<br>
+**Note**: According to tha naming convention if the name of the gateway is "Is it ok?" the handler method should be called as "Is_it_ok_". All special characters are being replaced with underscore characters runtime.
 
 ```
 exports.Is_it_ok_ = function(data, done) {
@@ -89,6 +91,7 @@ exports.Is_it_ok_$nok = function(data) {
     return data == "A"
 };
 ```
+![exclusive-gateway-workflow](./documentation/img/exclusive-gw-workflow.png)
 
 
 
