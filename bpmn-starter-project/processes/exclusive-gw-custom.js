@@ -1,6 +1,5 @@
 /*global module exports console */
 
-exports.process = null;
 
 exports.First_Task = function( data , done ){
     console.log("First_Task");
