@@ -4,6 +4,7 @@
 "use strict";
 
 var fileUtils = require('./utils/file.js');
+const handlerFileExtension = "ts";
 
 exports.handlerNameSeparator = '$';
 
@@ -49,7 +50,26 @@ exports.callHandler = function(name, process, data, handlerDoneCallback) {
  * @return {String}
  */
 var getHandlerFileName = exports.getHandlerFileName = function(bpmnFilePath) {
-    return (fileUtils.removeFileExtension(bpmnFilePath) + ".js");
+
+
+    var bpmnModelName = fileUtils.removeFileExtension(bpmnFilePath);
+    var handlerFileName = fileUtils.removeFileExtension(bpmnFilePath) + ".js"
+    
+    if (handlerFileExtension == "ts"){        
+    const { exec, execSync } = require('child_process');
+    const compilerScript = execSync('sh ../bpmn/lib/compile-typescript-handler.sh ' + bpmnModelName + ".ts",
+        (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            if (error !== null) {
+                console.log(`exec error: ${error}`);
+            }
+        });
+    }
+
+
+    return handlerFileName;
+
 };
 
 /**
