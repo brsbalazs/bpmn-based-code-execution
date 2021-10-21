@@ -12,6 +12,7 @@ Launch project with an example bpmn:
 
 Updates on bpmn library:
  - Winston dependency version fixed to "0.7.1 - 2.4.4"
+ - Runtime Typescript handler support
 
 <br>
 
