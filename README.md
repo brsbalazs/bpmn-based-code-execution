@@ -95,4 +95,4 @@ exports.Is_it_ok_$nok = function(data) {
 ![exclusive-gateway-workflow](./documentation/img/exclusive-gw-workflow.png)
 
 ## 4. Using typescript handlers - lib modification
-The used bpmn library originally only supports javascript handlers. I modified the library to also support typescript handler files with creating a script file that compiles the given .ts file and completed the bpmn/lib/handler with the execution of the script. There is a constant called const handlerFileExtension in the beggining of the file which determins if the handler is javascript or typescript.
+The used bpmn library originally only supports javascript handlers. I modified the library to also support typescript handler files with executing a tsc command which compiles the given .ts file and completed the bpmn/lib/handler with the execution of the script. There is a constant called const handlerFileExtension in the beggining of the file which determins if the handler is javascript or typescript.

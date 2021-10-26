@@ -57,7 +57,7 @@ var getHandlerFileName = exports.getHandlerFileName = function(bpmnFilePath) {
     
     if (handlerFileExtension == "ts"){        
     const { exec, execSync } = require('child_process');
-    const compilerScript = execSync('sh ../bpmn/lib/compile-typescript-handler.sh ' + bpmnModelName + ".ts",
+    const compilerScript = execSync('tsc ' + bpmnModelName + ".ts",
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
